@@ -1,0 +1,23 @@
+{
+  "name": "huy_fashion",
+  "version": "1.0.0",
+  "description": "Dự án ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huyshine/Shop_Huy_Fashion.git"
+  },
+  "keywords": [
+    "Fashion",
+    "Shop"
+  ],
+  "author": "Huy_dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huyshine/Shop_Huy_Fashion/issues"
+  },
+  "homepage": "https://github.com/huyshine/Shop_Huy_Fashion#readme"
+}
