@@ -1,8 +1,8 @@
 // import React from 'react'
 
-const TypeProduct = () => {
+const TypeProduct = ({name} : any) => {
   return (
-    <div>TypeProduct</div>
+    <div>{name}</div>
   )
 }
 
