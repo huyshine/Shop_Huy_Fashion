@@ -58,12 +58,12 @@ export const WrapperAddressProduct = styled.div`
 `
 
 export const WrapperQualityProduct = styled.div`
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    width: 120px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        width: 110px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
 `
 
 export const WrapperInputNumber = styled(InputNumber)`
