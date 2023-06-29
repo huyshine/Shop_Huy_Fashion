@@ -1,4 +1,5 @@
 import CardComponent from "../../components/CardComponent/CardComponent";
+import NavBarComponet from "../../components/NavBarComponent/NavBarComponet";
 import SliderComponent from "../../components/SliderComponent/SliderComponent";
 import TypeProduct from "../../components/TypeProduct/TypeProduct";
 import { WrapperTypeProduct } from "./style";
@@ -42,6 +43,7 @@ export const HomePage = () => {
         >
           <CardComponent />
         </div>
+        <NavBarComponet/>
       </div>
     </>
   );
