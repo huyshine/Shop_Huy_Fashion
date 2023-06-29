@@ -1,8 +1,16 @@
-import { WrapperHeader, WrapperTextHeader, WrapperHeaderAccout, WrapperTextHeaderSmall } from "./style";
-import { Col } from "antd";
-import { UserOutlined, DownOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import {
+  WrapperHeader,
+  WrapperTextHeader,
+  WrapperHeaderAccout,
+  WrapperTextHeaderSmall,
+} from "./style";
+import { Badge, Col } from "antd";
+import {
+  UserOutlined,
+  DownOutlined,
+  ShoppingCartOutlined,
+} from "@ant-design/icons";
 import ButttonInputSearch from "../ButttonInputSearch/ButttonInputSearch";
-
 
 const HeaderComponent = () => {
   return (
@@ -16,10 +24,10 @@ const HeaderComponent = () => {
           placeholder="input search text"
           size="large"
           bordered={false}
-          textbutton= "Tìm kiếm"
+          textbutton="Tìm kiếm"
         />
       </Col>
-      <Col span={6} style={{display: 'flex' , gap: '20px'}}>
+      <Col span={6} style={{ display: "flex", gap: "20px" , alignItems: 'center' }}>
         <WrapperHeaderAccout>
           <UserOutlined />
           <div>
@@ -31,8 +39,10 @@ const HeaderComponent = () => {
           </div>
         </WrapperHeaderAccout>
         <div>
-        <ShoppingCartOutlined style={{color: '#fff'}}/>
-        <WrapperTextHeaderSmall >Giỏ hàng</WrapperTextHeaderSmall>
+          <Badge count={4} size="small">
+            <ShoppingCartOutlined style={{ color: "#fff" , fontSize: '20px'}} />
+          </Badge>
+          <WrapperTextHeaderSmall>Giỏ hàng</WrapperTextHeaderSmall>
         </div>
       </Col>
     </WrapperHeader>

@@ -1,8 +1,9 @@
+import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
 import CardComponent from "../../components/CardComponent/CardComponent";
 import NavBarComponet from "../../components/NavBarComponent/NavBarComponet";
 import SliderComponent from "../../components/SliderComponent/SliderComponent";
 import TypeProduct from "../../components/TypeProduct/TypeProduct";
-import { WrapperTypeProduct } from "./style";
+import { WrapperButtonMore, WrapperProducts, WrapperTypeProduct } from "./style";
 
 export const HomePage = () => {
   const arr = ["TV", "Tu Lanh", "Lap top"];
@@ -29,21 +30,35 @@ export const HomePage = () => {
         style={{
           backgroundColor: "#effef",
           padding: "0 120px",
-          height: "100px",
+          height: "100px"
+          
         }}
       >
         <SliderComponent arrImages={{ slider }} />
-        <div
-          style={{
-            marginTop: "20px",
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-          }}
-        >
+        <WrapperProducts>
           <CardComponent />
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
+        </WrapperProducts>
+        {/* <NavBarComponet/> */}
+        <div style={{width: '100%' , display:'flex', justifyContent: 'center', marginTop: '10px' }}>
+          <WrapperButtonMore
+            textbutton="Xem thêm"
+            type="outline"
+            styleButton={{
+              border: "1px solid rgb(11,116 , 229)",
+              width: "240px",
+              height: "38px",
+              borderRadius: "4px",
+            }}
+            styleTextButton={{ fontWeight: 500 }}
+          />
         </div>
-        <NavBarComponet/>
       </div>
     </>
   );
