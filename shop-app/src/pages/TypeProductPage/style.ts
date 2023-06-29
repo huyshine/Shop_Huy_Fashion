@@ -1,7 +1,7 @@
 import { Col } from "antd"
 import styled from "styled-components"
 
-export const WrapperProducts = styled(Col)`
+export const WrapperProducts = styled.div`
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -15,5 +15,5 @@ export const WrapperNavbar = styled(Col)`
     border-radius: 4px;
     height: fit-content;
     margin-top:20px;
-    width: 200px;
+    width: 100%;
 `
