@@ -5,7 +5,7 @@ import DefaultComponent from "./components/DefaultComponent/DefaultComponent";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import axios from "axios";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 import {
   useQuery,
 } from '@tanstack/react-query'
@@ -16,17 +16,17 @@ function App() {
 
   // },[])
 
-  // console.log("process.env.REACT_API_URL_BACKEND", );
-  const fetchAPI = async () => {
+  // const fetchAPI = async () => {
     
-    const res = await axios.get(`http://localhost:3001/api/product/get-all`)
-    console.log('res', res);
-    return res.data
-  }
+  //   const res = await axios.get(`http://localhost:3001/api/product/get-all`)
+  //   // console.log("process.env.REACT_API_URL_BACKEND", process.env.REACT_API_URL_KEY);
+  //   console.log('res', res);
+  //   return res.data
+  // }
 
-  const query = useQuery({ queryKey: ['todos'], queryFn: fetchAPI })
+  // const query = useQuery({ queryKey: ['todos'], queryFn: fetchAPI })
 
-  console.log("query", query);
+  // console.log("query", query);
   
 
   return (

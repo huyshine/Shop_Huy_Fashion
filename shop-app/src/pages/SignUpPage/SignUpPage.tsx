@@ -8,9 +8,37 @@ import InputFormConponent from "../../components/InputFormConponent/InputFormCon
 import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
 import { Image } from "antd";
 import { EyeFilled, EyeInvisibleFilled } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
+import { AnyAction } from "@reduxjs/toolkit";
 
 const SignUpPage = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
   const [isShowPassword, setIsShowPassword] = useState(false);
+  const [isShowConfirmPassword, setIsShowConfirmPassword] = useState(false);
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const handleNavigateSignIn = () => {
+    navigate("/sign-in");
+  };
+
+  const handleOnchangeEmail = (value: any) => {
+    setEmail(value);
+  };
+
+  const handleOnchangePassword = (value: any) => {
+    setPassword(value);
+  };
+
+  const handleOnchangeConfirmPassword = (value: any) => {
+    setConfirmPassword(value);
+  };
+
+  const handleSignUp = () => {
+    console.log({ email, password, confirmPassword });
+    // ({ email, password, confirmPassword })
+  }
+
   return (
     <div
       style={{
@@ -36,9 +64,12 @@ const SignUpPage = () => {
           <InputFormConponent
             style={{ marginBottom: "10px" }}
             placeholder="abc@gmail.com"
+            value={email}
+            onChange={handleOnchangeEmail}
           />
           <div style={{ position: "relative" }}>
             <span
+              onClick={() => setIsShowPassword(!isShowPassword)}
               style={{
                 zIndex: 10,
                 position: "absolute",
@@ -49,12 +80,16 @@ const SignUpPage = () => {
               {isShowPassword ? <EyeFilled /> : <EyeInvisibleFilled />}
             </span>
             <InputFormConponent
+              style={{ marginBottom: "10px" }}
               placeholder="password"
               type={isShowPassword ? "type" : "password"}
+              value={password}
+              onChange={handleOnchangePassword}
             />
           </div>
           <div style={{ position: "relative" }}>
             <span
+              onClick={() => setIsShowConfirmPassword(!isShowConfirmPassword)}
               style={{
                 zIndex: 10,
                 position: "absolute",
@@ -62,14 +97,20 @@ const SignUpPage = () => {
                 right: "8px",
               }}
             >
-              {isShowPassword ? <EyeFilled /> : <EyeInvisibleFilled />}
+              {isShowConfirmPassword ? <EyeFilled /> : <EyeInvisibleFilled />}
             </span>
             <InputFormConponent
               placeholder="Confirm Password"
-              type={isShowPassword ? "type" : "password"}
+              type={isShowConfirmPassword ? "type" : "password"}
+              value={confirmPassword}
+              onChange={handleOnchangeConfirmPassword}
             />
           </div>
           <ButtonComponent
+            disabled={
+              !email.length || !password.length || !confirmPassword.length
+            }
+            onClick={handleSignUp}
             size={40}
             styleButton={{
               background: "rgb(255,57,69)",
@@ -87,11 +128,10 @@ const SignUpPage = () => {
             }}
           ></ButtonComponent>
           <p>
-            <WrapperTextLight>Quên mật khẩu</WrapperTextLight>
-          </p>
-          <p>
-            Chưa có tài khoản ?{" "}
-            <WrapperTextLight>Tạo tài khoản</WrapperTextLight>
+            Bạn đã có tài khoản?{" "}
+            <WrapperTextLight onClick={handleNavigateSignIn}>
+              Đăng nhập
+            </WrapperTextLight>
           </p>
         </WrapperContainerLeft>
         <WrapperContainerRight>
