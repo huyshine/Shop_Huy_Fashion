@@ -1,10 +1,34 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {Fragment} from 'react'
+import {Fragment, useEffect} from 'react'
 import { routes } from "./routes";
 import DefaultComponent from "./components/DefaultComponent/DefaultComponent";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
+import dotenv from "dotenv";
+import {
+  useQuery,
+} from '@tanstack/react-query'
+
 function App() {
+  // useEffect(()=>{
+  //   fetchAPI()
+
+  // },[])
+
+  // console.log("process.env.REACT_API_URL_BACKEND", );
+  const fetchAPI = async () => {
+    
+    const res = await axios.get(`http://localhost:3001/api/product/get-all`)
+    console.log('res', res);
+    return res.data
+  }
+
+  const query = useQuery({ queryKey: ['todos'], queryFn: fetchAPI })
+
+  console.log("query", query);
+  
+
   return (
     <BrowserRouter>
       <Routes>
