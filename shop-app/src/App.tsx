@@ -19,7 +19,7 @@ function App() {
   // const fetchAPI = async () => {
     
   //   const res = await axios.get(`http://localhost:3001/api/product/get-all`)
-  //   // console.log("process.env.REACT_API_URL_BACKEND", process.env.REACT_API_URL_KEY);
+    // console.log("process.env.REACT_API_URL_BACKEND", process.env.REACT_API_URL_KEY);
   //   console.log('res', res);
   //   return res.data
   // }
@@ -28,6 +28,7 @@ function App() {
 
   // console.log("query", query);
   
+    // console.log("process.env.REACT_API_URL_BACKEND", process.env.REACT_API_URL_KEY);
 
   return (
     <BrowserRouter>
